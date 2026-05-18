@@ -3,12 +3,12 @@ Pod::Spec.new do |s|
   s.version      = '2.0.5'
   s.summary      = 'WeChat Open SDK without Payment (XCFramework)'
   s.description  = 'WeChat SDK for sharing, login, favorites. Without payment feature.'
-  s.homepage     = 'https://mp.weixin.qq.com'
-  s.license      = { :type => 'Copyright', :text => 'Copyright 2020 tencent.com. All rights reserved.' }
-  s.authors      = { 'tencent' => 'weixin-open@qq.com' }
+  s.homepage     = 'https://developers.weixin.qq.com/doc/oplatform/Mobile_App/Access_Guide/iOS.html'
+  s.license      = { :type => 'Copyright', :text => 'Copyright 2020 Tencent. All rights reserved.' }
+  s.authors      = { 'Tencent' => 'name' }
+  
   s.platform     = :ios, '12.0'
 
-  # 指向你的 GitLab 仓库
   s.source       = { 
     :git => 'https://github.com/Runnershuai-p/wx_sdk_nopay.git', 
     :tag => s.version.to_s 
@@ -17,24 +17,15 @@ Pod::Spec.new do |s|
   s.requires_arc = false
   s.vendored_frameworks = 'WechatOpenSDK.xcframework'
 
+  # 官方文档 [3] 要求的系统 Frameworks
   s.frameworks = [
-    'Security', 
-    'UIKit', 
-    'CoreGraphics', 
+    'Security',
+    'CoreGraphics',
     'WebKit'
   ]
 
-  s.libraries = [
-    'z', 
-    'sqlite3.0', 
-    'c++'
-  ]
-
+  # 官方文档 [4] 要求的链接标志
   s.pod_target_xcconfig = {
-    'VALID_ARCHS' => 'arm64 x86_64'
-  }
-
-  s.user_target_xcconfig = {
-    'VALID_ARCHS' => 'arm64 x86_64'
+    'OTHER_LDFLAGS' => '-ObjC -all_load'
   }
 end
