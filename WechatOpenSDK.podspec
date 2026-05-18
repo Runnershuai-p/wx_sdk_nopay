@@ -34,8 +34,7 @@ Pod::Spec.new do |s|
 
   # 链接标志
   s.pod_target_xcconfig = {
-    'OTHER_LDFLAGS'       => '-ObjC -all_load',
-    'VALID_ARCHS'         => 'arm64 x86_64',
+    'OTHER_LDFLAGS'       => '-ObjC -all_load'
   }
 
 
