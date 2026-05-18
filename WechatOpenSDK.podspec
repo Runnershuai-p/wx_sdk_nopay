@@ -6,26 +6,40 @@ Pod::Spec.new do |s|
   s.homepage     = 'https://developers.weixin.qq.com/doc/oplatform/Mobile_App/Access_Guide/iOS.html'
   s.license      = { :type => 'Copyright', :text => 'Copyright 2020 Tencent. All rights reserved.' }
   s.authors      = { 'Tencent' => 'name' }
-  
+
   s.platform     = :ios, '12.0'
 
-  s.source       = { 
-    :git => 'https://github.com/Runnershuai-p/wx_sdk_nopay.git', 
-    :tag => s.version.to_s 
+  s.source       = {
+    :git => 'https://github.com/Runnershuai-p/wx_sdk_nopay.git',
+    :tag => s.version.to_s
   }
 
   s.requires_arc = false
   s.vendored_frameworks = 'WechatOpenSDK.xcframework'
 
-  # 官方文档 [3] 要求的系统 Frameworks
+  # 官方文档要求的系统 Frameworks
   s.frameworks = [
-    'Security',
-    'CoreGraphics',
-    'WebKit'
+    "Security",
+    "UIKit",
+    "CoreGraphics",
+    "WebKit"
   ]
 
-  # 官方文档 [4] 要求的链接标志
+  # 官方文档要求的系统 Libraries
+  s.libraries = [
+    'z',
+    'sqlite3',
+    'c++'
+  ]
+
+  # 链接标志
   s.pod_target_xcconfig = {
-    'OTHER_LDFLAGS' => '-ObjC -all_load'
+    'OTHER_LDFLAGS'       => '-ObjC -all_load',
+    'VALID_ARCHS'         => 'arm64 x86_64',
+  }
+
+  # 不把 VALID_ARCHS 写到宿主工程，避免冲突
+  s.user_target_xcconfig = {
+    "VALID_ARCHS": "arm64 x86_64"
   }
 end
