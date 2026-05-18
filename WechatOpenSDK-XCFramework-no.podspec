@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   }
 
   s.requires_arc = false
-  s.vendored_frameworks = 'WechatOpenSDK.xcframework'
+  s.vendored_frameworks = 'WechatOpenSDK-no.xcframework'
 
   s.frameworks = [
     'Security', 
