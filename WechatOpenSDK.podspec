@@ -38,8 +38,5 @@ Pod::Spec.new do |s|
     'VALID_ARCHS'         => 'arm64 x86_64',
   }
 
-  # 不把 VALID_ARCHS 写到宿主工程，避免冲突
-  s.user_target_xcconfig = {
-    "VALID_ARCHS": "arm64 x86_64"
-  }
+
 end
