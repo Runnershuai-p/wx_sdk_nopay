@@ -32,10 +32,10 @@ Pod::Spec.new do |s|
     'c++'
   ]
 
-  # 链接标志
+  # ✅ 不需要 VALID_ARCHS 和 EXCLUDED_ARCHS
+  # 因为 xcframework 已经包含所有需要的架构切片
   s.pod_target_xcconfig = {
-    'OTHER_LDFLAGS'       => '-ObjC -all_load'
+    'OTHER_LDFLAGS' => '-ObjC -all_load'
   }
-
 
 end
