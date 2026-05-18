@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = 'WechatOpenSDK-XCFramework-NoPay'
+  s.name         = 'WechatOpenSDK-XCFramework-no'
   s.version      = '2.0.5'
   s.summary      = 'WeChat Open SDK without Payment (XCFramework)'
   s.description  = 'WeChat SDK for sharing, login, favorites. Without payment feature.'
